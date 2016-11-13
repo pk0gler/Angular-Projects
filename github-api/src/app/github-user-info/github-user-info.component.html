@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  <div class="panel panel-heading">
+    Github User : {{usrname}}
+    <i *ngIf="isLoading" class="fa fa-spinner fa-spin fa-1x" style="float: right"></i>
+    <i
+      *ngIf="!isLoading"
+      class="fa"
+      [ngClass]="{
+        'fa-chevron-circle-down': isUp,
+        'fa-chevron-circle-up': !isUp
+      }"
+      (click)="onclick()"
+      aria-hidden="true"
+      style="float: right;">
+    </i>
+  </div>
+  <div *ngIf="!isUp" class="panel-body">
+    <div class="media">
+      <div class="media-left">
+        <img [src]="jsonObject.avatar_url" class="media-object">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Account: {{usrname}}</h4>
+        <i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 3px"></i> Joined On
+        {{jsonObject.created_at}}<br>
+        <p *ngIf="jsonObject.location!=null">
+          <i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 3px">
+          </i>
+          Location {{jsonObject.location}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
