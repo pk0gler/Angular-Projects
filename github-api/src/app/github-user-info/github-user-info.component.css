@@ -1,11 +1,11 @@
-.media-object	{
-  width:	100px;
-  height:	100px;
-  margin-right: 25px;
-  border-radius:	100%;
+.media-object {
+    width: 100px;
+    height: 100px;
+    margin-right: 25px;
+    border-radius: 100%;
 }
 
 .media-body {
-  font-size: 12px;
-  line-height: 25px;
+    font-size: 12px;
+    line-height: 25px;
 }

@@ -3,35 +3,35 @@ import {GithubApiService} from "../github-api.service";
 import {userInfo} from "os";
 
 @Component({
-  selector: 'app-github-user-info',
-  templateUrl: './github-user-info.component.html',
-  styleUrls: ['./github-user-info.component.css'],
-  providers: [GithubApiService]
+	selector: 'app-github-user-info',
+	templateUrl: './github-user-info.component.html',
+	styleUrls: ['./github-user-info.component.css'],
+	providers: [GithubApiService]
 })
 export class GithubUserInfoComponent implements OnInit {
 
-  @Input() usrname : string
+	@Input() usrname: string
 
-  isLoading : boolean = true
-  isUp : boolean = true
+	isLoading: boolean = true
+	isUp: boolean = true
 
-  jsonObject : JSON;
+	jsonObject: JSON;
 
-  constructor(private _gitService : GithubApiService) {
+	constructor(private _gitService: GithubApiService) {
 
-  }
+	}
 
-  onclick() {
-    this.isUp = !this.isUp
-  }
+	onclick() {
+		this.isUp = !this.isUp
+	}
 
-  ngOnInit() {
-    this._gitService.getUserInfo(this.usrname)
-      .subscribe(res => {
-        console.log(res)
-        this.isLoading = false
-        this.jsonObject = res
-      })
-  }
+	ngOnInit() {
+		this._gitService.getUserInfo(this.usrname)
+			.subscribe(res => {
+				console.log(res)
+				this.isLoading = false
+				this.jsonObject = res
+			})
+	}
 
 }
