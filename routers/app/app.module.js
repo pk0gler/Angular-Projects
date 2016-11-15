@@ -17,6 +17,9 @@ var messages_module_1 = require('./messages/messages.module');
 var photos_module_1 = require('./photos/photos.module');
 var app_routing_1 = require("./app.routing");
 var photos_routing_1 = require("./photos/photos.routing");
+var auth_guard_service_1 = require("./auth-guard.service");
+var auth_service_1 = require("./auth.service");
+var prevent_unsaved_changes_guard_service_1 = require("./prevent-unsaved-changes-guard.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,6 +36,11 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
                 not_found_component_1.NotFoundComponent
+            ],
+            providers: [
+                auth_guard_service_1.AuthGuard,
+                auth_service_1.AuthService,
+                prevent_unsaved_changes_guard_service_1.PreventUnsavedChangesGuard
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

@@ -9,6 +9,9 @@ import {MessagesModule} from './messages/messages.module';
 import {PhotosModule}    from './photos/photos.module';
 import {routing}        from "./app.routing";
 import {photosRouting} from "./photos/photos.routing";
+import {AuthGuard} from "./auth-guard.service";
+import {AuthService} from "./auth.service";
+import {PreventUnsavedChangesGuard} from "./prevent-unsaved-changes-guard.service";
 
 @NgModule({
 	imports: [
@@ -22,6 +25,11 @@ import {photosRouting} from "./photos/photos.routing";
 		AppComponent,
 		HomeComponent,
 		NotFoundComponent
+	],
+	providers: [
+		AuthGuard,
+		AuthService,
+		PreventUnsavedChangesGuard
 	],
 	bootstrap: [AppComponent]
 })

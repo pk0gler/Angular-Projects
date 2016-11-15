@@ -1,6 +1,7 @@
 
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {OnActivate} from "@angular/router-deprecated";
 
 @Component({
     template: `<h1>Photo Details {{ id }}</h1>

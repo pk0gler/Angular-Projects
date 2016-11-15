@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthService} from "./auth.service";
 
 @Component({
-  template: `<h1>Home Page</h1>
+	template: `<h1>Home Page</h1>
   `
 })
-export class HomeComponent { }
+export class HomeComponent {
+	constructor(authService : AuthService) {
+		authService.login("a", "asd")
+	}
+}

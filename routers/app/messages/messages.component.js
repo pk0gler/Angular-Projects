@@ -8,13 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var messages_service_1 = require('./messages.service');
+var core_1 = require("@angular/core");
+var messages_service_1 = require("./messages.service");
 var MessagesComponent = (function () {
     function MessagesComponent(service) {
         this.title = "New Message";
         this.messages = service.getMessages();
     }
+    MessagesComponent.prototype.hasUnsavedChanges = function () {
+        return true;
+    };
     MessagesComponent = __decorate([
         core_1.Component({
             selector: 'messages',
