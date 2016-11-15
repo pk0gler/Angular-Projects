@@ -5,7 +5,7 @@ import {HttpModule, Jsonp, JsonpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {GithubUserInfoComponent} from './github-user-info/github-user-info.component';
-import {GithubApiService} from "./github-api.service";
+import {GithubApiService} from "./services/github-api.service";
 
 @NgModule({
 	declarations: [

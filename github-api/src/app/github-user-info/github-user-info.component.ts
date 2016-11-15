@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {GithubApiService} from "../github-api.service";
+import {GithubApiService} from "../services/github-api.service";
 import {userInfo} from "os";
 
 @Component({
@@ -10,11 +10,10 @@ import {userInfo} from "os";
 })
 export class GithubUserInfoComponent implements OnInit {
 
-	@Input() usrname: string
+	@Input() usrname: string;
 
-	isLoading: boolean = true
-	isUp: boolean = true
-
+	isLoading: boolean = true;
+	isUp: boolean = true;
 	jsonObject: JSON;
 
 	constructor(private _gitService: GithubApiService) {
@@ -22,15 +21,15 @@ export class GithubUserInfoComponent implements OnInit {
 	}
 
 	onclick() {
-		this.isUp = !this.isUp
+		this.isUp = !this.isUp;
 	}
 
 	ngOnInit() {
 		this._gitService.getUserInfo(this.usrname)
 			.subscribe(res => {
-				console.log(res)
-				this.isLoading = false
-				this.jsonObject = res
+				console.log(res);
+				this.isLoading = false;
+				this.jsonObject = res;
 			})
 	}
 
